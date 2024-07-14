@@ -2,14 +2,13 @@ from fastapi import FastAPI, Depends
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 
 from typing import Annotated
-from server.routes.news import router as NewsRouter
-from server.routes.auth import router as AuthRouter
-
+from routes.news import router as NewsRouter
+from routes.auth import router as AuthRouter
 from pydantic import BaseModel
 from typing import Union
 
-from server.database import mongodb
-from server.database import Base, engine
+from database import mongodb
+from database import Base, engine
 
 Base.metadata.create_all(bind=engine)
 

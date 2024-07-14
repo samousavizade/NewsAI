@@ -2,12 +2,12 @@ from datetime import datetime, timedelta, timezone
 from typing import Annotated, List, Optional
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
-from ..models.scopes import Scope
+from models.scopes import Scope
 
 # sql db
-from server.database import get_sqldb_session
+from database import get_sqldb_session
 from sqlalchemy.orm import Session
-from ..database.sql import crud, models, schemas
+from database.sql import crud, models, schemas
 
 import random
 import jwt
@@ -27,8 +27,8 @@ SECRET_KEY = "3063b08e2160930c08b705daf897ae1b0fa12587320bfbc67af3330c4561f6d3"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
-from ..database.sql import crud, models, schemas
-from ..database import SessionMaker, engine
+from database.sql import crud, models, schemas
+from database import SessionMaker, engine
 
 models.Base.metadata.create_all(bind=engine)
 

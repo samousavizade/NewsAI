@@ -4,10 +4,10 @@ from fastapi.encoders import jsonable_encoder
 from typing import Annotated, List
 
 # mongodb 
-from server.database import get_mongodb
-from server.database.mongo.mongo_manager import MongoManager
+from database import get_mongodb
+from database.mongo.mongo_manager import MongoManager
 
-from server.models.news import (
+from models.news import (
     ErrorResponseModel,
     ResponseModel,
     CreateNewsSchema,

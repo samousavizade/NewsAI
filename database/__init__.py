@@ -1,4 +1,4 @@
-from server.database.mongo.mongo_manager import MongoManager
+from .mongo.mongo_manager import MongoManager
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
